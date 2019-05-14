@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="members">
+	<insert id="insertmember" parameterType="com.kbkb.mypackage.member.MemberDTO">
+		insert into member
+		(idx,id,pw,name,email)
+		values
+		(member_seq.nextval,#{id},#{pw},#{name},#{email})
+	</insert>
+	<select id="selectAll" resultType="com.kbkb.mypackage.member.MemberDTO">
+		select * from member
+		order by idx desc
+	</select>
+	<select id="selectpage" 
+		resultType="com.kbkb.mypackage.member.MemberDTO"
+		parameterType="com.kbkb.mypackage.member.Page">
+		select * from ( select rownum rnum, b.* from (
+			select idx, id, name, email from member
+			order by idx desc ) b )
+		where rnum BETWEEN #{startrow} and #{endrow}
+	</select>
+	<select id="selectcount" resultType="java.lang.Integer">
+		select round(TO_NUMBER(count(*)/10))+1 from member
+	</select>
+	<select id="selectlogin" 
+		parameterType="com.kbkb.mypackage.member.MemberDTO"
+		resultType="com.kbkb.mypackage.member.MemberDTO">
+		select * from member
+		where email = #{email} and pw = #{pw}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

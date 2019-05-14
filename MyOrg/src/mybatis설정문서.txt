@@ -1,0 +1,47 @@
+1. pom.xml 
+	mybatis.jar
+	mybatis-spring.jar
+	commons-dbcp.jar
+	spring-jdbc.jar
+	oracle18c.jar -> 빌드패스에서 직접 추가
+	jar 추가
+
+2. context-root.xml mybatis 객체생성
+
+3. mappers.xml
+	설정파일 추가
+
+4. java 에서 sqlsession 설정하고 테스트
+
+bbans.blogspot.com
+
+소스 경로
+D:\001-공유폴더\스프링 프로젝트 소스
+
+
+MVC 패턴 1 
+JSP파일을 호출하면 tomcat 에서 자동으로
+
+A.jsp 요청 -> tomcat 자동으로 a_jsp.java -> html문서변환 응답
+
+MVC 패턴 2
+/a 요청
+Contoller -> java 파일 메서드로 이동하게되고 -> jsp 파일로 간다 
+Servlet       DB 에 접속해서 insert select
+              model.addAttribute() 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
