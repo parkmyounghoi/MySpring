@@ -13,10 +13,10 @@
 	
 	<beans:bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<beans:property name="username" value="c##kbkb" />
-		<beans:property name="password" value="1234" />
+		<beans:property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<beans:property name="url" value="jdbc:sqlserver://munggu.iptime.org;databaseName=2020db;" />
+		<beans:property name="username" value="sa" />
+		<beans:property name="password" value="8765432!" />
 	</beans:bean>
 	
 	<beans:bean id="sqlSessionFactory"
